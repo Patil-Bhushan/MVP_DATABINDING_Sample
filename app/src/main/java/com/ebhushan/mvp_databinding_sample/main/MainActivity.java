@@ -1,5 +1,7 @@
 package com.ebhushan.mvp_databinding_sample.main;
 
+import android.databinding.DataBindingComponent;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -11,6 +13,8 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.ebhushan.mvp_databinding_sample.R;
+import com.ebhushan.mvp_databinding_sample.databinding.ActivityMainBinding;
+import com.ebhushan.mvp_databinding_sample.databinding.ContentMainBinding;
 
 public class MainActivity extends AppCompatActivity implements MainInterface.MainView {
 
@@ -18,7 +22,10 @@ public class MainActivity extends AppCompatActivity implements MainInterface.Mai
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        //setContentView(R.layout.activity_main);
+        ActivityMainBinding binding= DataBindingUtil.setContentView(this,R.layout.activity_main);
+        presenter=new MainPresenter(this);
+        binding.maincontent.setPresenter(presenter);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -30,7 +37,8 @@ public class MainActivity extends AppCompatActivity implements MainInterface.Mai
                         .setAction("Action", null).show();
             }
         });
-        presenter=new MainPresenter(this);
+
+
 
     }
 

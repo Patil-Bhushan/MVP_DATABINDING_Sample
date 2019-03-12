@@ -1,5 +1,7 @@
 package com.ebhushan.mvp_databinding_sample.main;
 
+import android.view.View;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
@@ -12,7 +14,8 @@ public class MainPresenterTest {
 
     @Mock
     private MainInterface.MainView mvpView;
-
+@Mock
+private View v;
     private MainPresenter mvp_presenter;
 
     @Before
@@ -23,13 +26,13 @@ public class MainPresenterTest {
 
     @Test
     public void handleSignInClick() {
-mvp_presenter.handleSignInClick();
+mvp_presenter.handleSignInClick(v);
 verify(mvpView).showSignInScreen();
     }
 
     @Test
     public void handleSignUpClick() {
-        mvp_presenter.handleSignUpClick();
+        mvp_presenter.handleSignUpClick(v);
         verify(mvpView).showSignUpScreen();
     }
 }

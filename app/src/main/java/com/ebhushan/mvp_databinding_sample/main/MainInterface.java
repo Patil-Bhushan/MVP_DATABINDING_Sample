@@ -1,5 +1,7 @@
 package com.ebhushan.mvp_databinding_sample.main;
 
+import android.view.View;
+
 public interface MainInterface {
 
     interface MainView{
@@ -12,7 +14,7 @@ public interface MainInterface {
 
     interface MainPresenter{
 
-        void handleSignInClick();
-        void handleSignUpClick();
+        void handleSignInClick(View v);
+        void handleSignUpClick(View v);
     }
 }
