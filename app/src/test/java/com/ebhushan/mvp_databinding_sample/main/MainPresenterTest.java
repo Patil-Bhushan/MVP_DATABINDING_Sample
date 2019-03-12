@@ -14,8 +14,8 @@ public class MainPresenterTest {
 
     @Mock
     private MainInterface.MainView mvpView;
-@Mock
-private View v;
+   @Mock
+    private View v;
     private MainPresenter mvp_presenter;
 
     @Before
