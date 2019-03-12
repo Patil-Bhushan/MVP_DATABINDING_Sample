@@ -1,5 +1,6 @@
 package com.ebhushan.mvp_databinding_sample.main;
 
+import android.content.Intent;
 import android.databinding.DataBindingComponent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 import com.ebhushan.mvp_databinding_sample.R;
 import com.ebhushan.mvp_databinding_sample.databinding.ActivityMainBinding;
 import com.ebhushan.mvp_databinding_sample.databinding.ContentMainBinding;
+import com.ebhushan.mvp_databinding_sample.signin.SignINActivity;
 
 public class MainActivity extends AppCompatActivity implements MainInterface.MainView {
 
@@ -35,6 +37,8 @@ public class MainActivity extends AppCompatActivity implements MainInterface.Mai
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+
+                startActivity(new Intent(MainActivity.this, SignINActivity.class));
             }
         });
 
